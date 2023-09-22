@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin DashBoard</title>
+    <link rel="icon" type="image/svg" href="assets/img/us.svg">
+    <link rel="stylesheet" href="frame.css">
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+<style type="text/css">
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Ubuntu',sans-serif;
+}
+:root{
+    --blue: #287bff;
+    --white: #fff;
+    --grey: #f5f5f5;
+    --black1: #222;
+    --black2: #999; 
+}
+body{
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+.container
+{
+    position: relative;
+    width: 100%;
+}
+.navigation
+{
+    position: fixed;
+    width: 322px;
+    height: 100%;
+    background: var(--blue);
+    border-left: 10px solid var(--blue);
+    transition: 0.5s;
+    left: 0px;
+    overflow: hidden;
+    overflow-y: scroll;
+}
+.navigation.active
+{
+    width: 80px;
+}
+.navigation ul
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+.navigation ul li
+{
+    position: relative;
+    width: 100%;
+    list-style: none;
+    border-top-left-radius: 30px;
+    border-bottom-left-radius: 30px;
+}
+.navigation ul li:hover,
+.navigation ul li.hovered
+{
+    background: var(--white);
+}
+.navigation ul li:nth-child(1)
+{
+    margin-bottom: 40px;
+    pointer-events: none;
+}
+.navigation ul li a
+{
+    position: relative;
+    display: block;
+    width: 100%;
+    display: flex;
+    text-decoration: none;
+    color: var(--white);
+}
+.navigation ul li:hover a,
+.navigation ul li.hovered a
+{
+    color: var(--blue);
+}
+.navigation ul li a .icon
+{
+    position: relative;
+    display: block;
+    min-width: 60px;
+    height: 60px;
+    line-height: 70px;
+    text-align: center;
+}
+.navigation ul li a .icon ion-icon
+{
+    font-size: 1.75em;
+}
+.navigation ul li a .title
+{
+    position: relative;
+    display: block;
+    padding: 0 10px;
+    height: 60px;
+    line-height: 60px;
+    white-space: nowrap;
+}
+.navigation ul li:hover a::before,
+.navigation ul li.hovered a::before
+{
+    content: '';
+    position: absolute;
+    top: -50px;
+    right: 0;
+    width: 50px;
+    height: 50px;
+    background: transparent;
+    border-radius: 50%;
+    box-shadow: 35px 35px 0 10px var(--white);
+    pointer-events: none;
+}
+.navigation ul li:hover a::after,
+.navigation ul li.hovered a::after
+{
+    content: '';
+    position: absolute;
+    bottom: -50px;
+    right: 0;
+    width: 50px;
+    height: 50px;
+    background: transparent;
+    border-radius: 50%;
+    box-shadow: 35px -35px 0 10px var(--white);
+    pointer-events: none;
+}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="navigation" id="content">
+            <ul>
+                <li>
+                    <a href="#">
+                        <span class="icon"><ion-icon name="logo-apple"></ion-icon></span>
+                        <span class="title">Admin Dashboard</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="title.html" target="main">
+                        <span class="icon"><ion-icon name="home-outline"></ion-icon></span>
+                        <span class="title">Home</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="tour.jsp" target="main">
+                        <span class="icon"><ion-icon name="airplane-outline"></ion-icon></span>
+                        <span class="title">Tour Booking</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="t.jsp" target="main">
+                        <span class="icon"><ion-icon name="airplane-outline"></ion-icon></span>
+                        <span class="title">Transport Booking</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="adminpg.jsp" target="main">
+                        <span class="icon"><ion-icon name="bed-outline"></ion-icon></span>
+                        <span class="title">PG Booking</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="adminhotel.jsp" target="main">
+                        <span class="icon"><ion-icon name="bed-outline"></ion-icon></span>
+                        <span class="title">Hotel Booking</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="adminedu.jsp" target="main">
+                        <span class="icon"><ion-icon name="school-outline"></ion-icon></span>
+                        <span class="title">Education</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="adminjob.jsp" target="main">
+                        <span class="icon"><ion-icon name="mail-open-outline"></ion-icon></span>
+                        <span class="title">Job Seeker</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="mail.jsp" target="main">
+                        <span class="icon"><ion-icon name="mail-open-outline"></ion-icon></span>
+                        <span class="title">Send Mail</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="mainreply.jsp" target="main">
+                        <span class="icon"><ion-icon name="mail-open-outline"></ion-icon></span>
+                        <span class="title">Queries</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="addtour.jsp" target="main">
+                        <span class="icon"><ion-icon name="person-add-outline"></ion-icon></span>
+                        <span class="title">Add Tour Package</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="addpg.jsp" target="main">
+                        <span class="icon"><ion-icon name="person-add-outline"></ion-icon></span>
+                        <span class="title">Add PG</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="addhotel.jsp" target="main">
+                        <span class="icon"><ion-icon name="person-add-outline"></ion-icon></span>
+                        <span class="title">Add Hotel</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="addclg.jsp" target="main">
+                        <span class="icon"><ion-icon name="person-add-outline"></ion-icon></span>
+                        <span class="title">Add Educational Institutions</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="addjob.jsp" target="main">
+                        <span class="icon"><ion-icon name="person-add-outline"></ion-icon></span>
+                        <span class="title">Add Jobs</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>
